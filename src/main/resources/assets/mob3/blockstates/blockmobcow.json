@@ -1,0 +1,24 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"custom": { "flip-v": true },
+		"model": "mob3:blockcow.obj",
+		"textures": {
+			"#Material": "mob3:blocks/blockmobcow"
+		}
+	},
+	"variants": {
+		"normal": [{}],
+		"inventory": {
+			"transform": "forge:default-block"
+		},
+		"facing": {
+			"north": {},
+			"south": {"y": 180},
+			"west": {"y": 270},
+			"east": {"y": 90},
+			"up": {"x": -90},
+			"down": {"x": 90}
+		}
+	}
+}

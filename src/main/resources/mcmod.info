@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mob3",
+  "name": "Mob\u00B3",
+  "description": "A bunch of server-friendly utilities for mob farming.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Villain"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
