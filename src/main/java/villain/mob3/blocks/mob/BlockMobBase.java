@@ -88,6 +88,15 @@ public class BlockMobBase extends Block implements ITileEntityProvider {
 	}
 	
 	@Override
+	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
+		TileEntity te = worldIn.getTileEntity(pos);
+		if(te instanceof BlockMobTileEntity){
+			BlockMobTileEntity bmte = (BlockMobTileEntity)te;
+			BlockUtils.dropItems(worldIn, pos, bmte.getDrops());
+		}
+	}
+	
+	@Override
 	public IBlockState getStateFromMeta(int meta) {
 		return getDefaultState().withProperty(FACING, EnumFacing.getFront(meta & 7));
 	}

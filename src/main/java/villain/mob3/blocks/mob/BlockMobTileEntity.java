@@ -215,4 +215,22 @@ public class BlockMobTileEntity extends TileEntity implements ITickable {
 	public BlockMobType getType(){
 		return type;
 	}
+	
+	public ItemStackHandler getItemStackHandler(){
+		return itemStackHandler;
+	}
+	
+	public ItemStack[] getDrops(){
+		ItemStack[] list = new ItemStack[itemStackHandler.getSlots() + 1];
+		for(int i = 0; i < itemStackHandler.getSlots(); i++){
+			if(itemStackHandler.getStackInSlot(i) != null){
+				list[i] = itemStackHandler.getStackInSlot(i);
+			}
+		}
+		if(cycleInputStack != null){
+			list[itemStackHandler.getSlots()] = cycleInputStack;
+		}
+		
+		return list;
+	}
 }
