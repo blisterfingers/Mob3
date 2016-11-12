@@ -21,7 +21,7 @@ public class Mob3 {
 	
 	@Mod.Instance(MODID)
 	public static Mob3 instance;
-	
+		
 	public static Logger logger;
 	
 	public static final Mob3Tab creativeTab = new Mob3Tab();

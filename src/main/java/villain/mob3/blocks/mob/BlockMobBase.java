@@ -29,24 +29,17 @@ import villain.mob3.utils.BlockUtils;
 public class BlockMobBase extends Block implements ITileEntityProvider {
 
 	public static final PropertyDirection FACING = PropertyDirection.create("facing");
+		
+	private BlockMobType type;
 	
-	public static final String TYPE_COW = "cow";
-	public static final String TYPE_MOOSHROOM = "mooshroom";
-	public static final String TYPE_SHEEP = "sheep";
-	public static final String TYPE_PIG = "pig";
-	public static final String TYPE_CREEPER = "creeper";
-	public static final String TYPE_ENDERMAN = "enderman";
-	
-	private String type;
-	
-	public BlockMobBase(String type){
+	public BlockMobBase(BlockMobType type){
 		super(Material.CLOTH);
 		this.type = type;
-		setUnlocalizedName(Mob3.MODID + ".blockmob" + type);
+		setUnlocalizedName(Mob3.MODID + ".blockmob" + type.getName());
 		setRegistryName("blockmob" + type);
 		GameRegistry.register(this);
 		GameRegistry.register(new ItemBlock(this), getRegistryName());
-		GameRegistry.registerTileEntity(BlockMobTileEntity.class, Mob3.MODID + "_blockmob" + type);
+		GameRegistry.registerTileEntity(BlockMobTileEntity.class, Mob3.MODID + "_blockmob" + type.getName());
 		setCreativeTab(Mob3.creativeTab);
 	}
 	
@@ -109,7 +102,7 @@ public class BlockMobBase extends Block implements ITileEntityProvider {
 		return new BlockStateContainer(this, FACING);
 	}
 	
-	public String getType(){
+	public BlockMobType getType(){
 		return type;
 	}
 	

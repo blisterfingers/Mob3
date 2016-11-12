@@ -3,6 +3,7 @@ package villain.mob3;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import villain.mob3.blocks.mob.BlockMobBase;
+import villain.mob3.blocks.mob.BlockMobType;
 
 public final class ModBlocks {
 	
@@ -14,12 +15,12 @@ public final class ModBlocks {
 	public static BlockMobBase blockMobEnderman;
 
 	public static void init(){
-		blockMobCow = new BlockMobBase(BlockMobBase.TYPE_COW);
-		blockMobMooshroom = new BlockMobBase(BlockMobBase.TYPE_MOOSHROOM);
-		blockMobSheep = new BlockMobBase(BlockMobBase.TYPE_SHEEP);
-		blockMobPig = new BlockMobBase(BlockMobBase.TYPE_PIG);
-		blockMobCreeper = new BlockMobBase(BlockMobBase.TYPE_CREEPER);
-		blockMobEnderman = new BlockMobBase(BlockMobBase.TYPE_ENDERMAN);
+		blockMobCow = new BlockMobBase(BlockMobType.COW);
+		blockMobMooshroom = new BlockMobBase(BlockMobType.MOOSHROOM);
+		blockMobSheep = new BlockMobBase(BlockMobType.SHEEP);
+		blockMobPig = new BlockMobBase(BlockMobType.PIG);
+		blockMobCreeper = new BlockMobBase(BlockMobType.CREEPER);
+		blockMobEnderman = new BlockMobBase(BlockMobType.ENDERMAN);
 	}
 	
 	@SideOnly(Side.CLIENT)
